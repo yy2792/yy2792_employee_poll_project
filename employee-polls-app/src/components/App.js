@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Login";
+import { connect } from "react-redux";
 
 function App() {
   return (
@@ -13,4 +14,8 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = ({ userAuth }) => ({
+  auth: userAuth,
+});
+
+export default connect(mapStateToProps)(App);
