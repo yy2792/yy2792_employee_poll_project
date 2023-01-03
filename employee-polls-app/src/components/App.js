@@ -1,8 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import { connect } from "react-redux";
+import { useEffect } from "react";
+import { handleData } from "../actions/common";
 
-function App() {
+function App(props) {
+  const { dispatch, auth } = props;
+  useEffect(() => {
+    dispatch(handleData());
+  }, [dispatch]);
+
   return (
     <Router>
       <div className="App">
