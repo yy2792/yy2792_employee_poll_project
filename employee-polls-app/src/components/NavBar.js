@@ -40,10 +40,10 @@ function NavBar({ dispatch, authedUser }) {
             <p>{authedUser.name}</p>
           </>
         )}
-        <ul className="nav-links">
-          <li id="logout" className="logoutBtn" onClick={handleLogout}>
+        <ul className="nav-logout">
+          <button id="logout" className="logoutBtn" onClick={handleLogout}>
             Logout
-          </li>
+          </button>
         </ul>
       </div>
     </nav>
