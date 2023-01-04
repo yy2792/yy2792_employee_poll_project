@@ -5,13 +5,13 @@ import { setAuthUser } from "../actions/userAuth";
 
 function Login(props) {
   console.log(props);
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState("Select");
   const navigate = useNavigate();
   const { dispatch, auth, users } = props;
 
   useEffect(() => {
     auth && navigate("/");
-  }, [auth]);
+  }, [auth, navigate]);
 
   function handleLogin() {
     dispatch(setAuthUser(user));
