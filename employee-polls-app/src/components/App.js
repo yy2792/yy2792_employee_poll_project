@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import Home from "./Home";
 import Poll from "./Poll";
+import NavBar from "./NavBar";
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import { handleData } from "../actions/common";
@@ -14,6 +15,7 @@ function App(props) {
 
   return (
     <Router>
+      {auth && <NavBar />}
       <div className="App">
         <Routes>
           <Route exact path="/" element={<Home />} />

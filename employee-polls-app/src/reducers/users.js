@@ -7,6 +7,17 @@ export default function users(state = {}, action) {
         ...state,
         ...action.users,
       };
+    case SAVE_ANSWER_U:
+      return {
+        ...state,
+        [action.authedUser]: {
+          ...state[action.authedUser],
+          answers: {
+            ...state[action.authedUser].answers,
+            [action.qid]: action.answer,
+          },
+        },
+      };
     default:
       return state;
   }
