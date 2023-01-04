@@ -10,7 +10,7 @@ function Login(props) {
   const { dispatch, auth, users } = props;
 
   useEffect(() => {
-    auth && navigate(-1);
+    auth && navigate("/");
   }, [auth]);
 
   function handleLogin() {
@@ -32,6 +32,15 @@ function Login(props) {
           </option>
         ))}
       </select>
+      {user !== "Select User" && (
+        <button
+          id="login-button"
+          style={{ marginLeft: "10px" }}
+          onClick={handleLogin}
+        >
+          Login
+        </button>
+      )}
     </div>
   );
 }
