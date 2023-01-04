@@ -10,3 +10,17 @@ export function handleData() {
     });
   };
 }
+
+export function handleSaveAnswer(info) {
+  return (dispatch) => {
+    saveQuestionAnswer(info)
+      .then(() => {
+        dispatch(saveAnswerQuestion(info));
+        dispatch(saveAnswerUser(info));
+      })
+      .catch((e) => {
+        console.log("Error while saving answer to database: ", e);
+        alert("Answer not saved.");
+      });
+  };
+}

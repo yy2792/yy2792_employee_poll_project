@@ -8,3 +8,19 @@ export function receiveQuestions(questions) {
     questions,
   };
 }
+
+export function saveAnswerQuestion({ authedUser, qid, answer }) {
+  return {
+    type: SAVE_ANSWER_Q,
+    authedUser,
+    qid,
+    answer,
+  };
+}
+
+export function addQuestion(question) {
+  return {
+    type: ADD_QUESTION,
+    question,
+  };
+}

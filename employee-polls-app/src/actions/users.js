@@ -8,3 +8,19 @@ export function receiveUsers(users) {
     users,
   };
 }
+
+export function saveAnswerUser({ authedUser, qid, answer }) {
+  return {
+    type: SAVE_ANSWER_U,
+    authedUser,
+    qid,
+    answer,
+  };
+}
+
+export function addQuestionUser(question) {
+  return {
+    type: ADD_QUESTION_U,
+    question,
+  };
+}
