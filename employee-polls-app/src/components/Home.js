@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import QuestionList from "./QuestionList";
+import employee_poll_front_page from "../assets/images/employee_poll_front_page.jpg";
 
 function Home(props) {
   const { auth, newQuestions, doneQuestions } = props;
@@ -26,7 +27,10 @@ function Home(props) {
   }, [auth, navigate]);
 
   return (
-    <div>
+    <div className="home-container">
+      <div className="background_img">
+        <img src={employee_poll_front_page} alt="employee_poll_front_page" />
+      </div>
       <div className="home-list">
         {questionsSections.map((d) => (
           <div key={d.key}>

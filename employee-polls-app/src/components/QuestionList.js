@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Question from "./Question";
 
 function QuestionList(props) {
-  const { title, questions } = props;
+  const { title, ids, questions } = props;
 
   return (
     <div className="question-list-container">
@@ -11,8 +11,8 @@ function QuestionList(props) {
         <b>{title}</b>
       </div>
       <div className="question-list-questions">
-        {questions &&
-          Object.keys(questions)
+        {ids &&
+          ids
             .map((qid) => questions[qid])
             .map((q) => (
               <div key={q.id}>
