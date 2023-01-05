@@ -7,7 +7,9 @@ function QuestionList(props) {
 
   return (
     <div className="question-list-container">
-      <div className="question-list-title">{title}</div>
+      <div className="question-list-title">
+        <b>{title}</b>
+      </div>
       <div className="question-list-questions">
         {questions &&
           Object.keys(questions)
