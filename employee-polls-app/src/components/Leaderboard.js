@@ -13,12 +13,12 @@ function Leaderboard(props) {
     users && (
       <div className="leaderboard">
         {
-          <table id="leaderbordResults">
+          <table data-testid="leaderbordResults">
             <thead>
               <tr>
-                <td id="Users">Users</td>
-                <td id="Answered">Answered</td>
-                <td id="Created">Created</td>
+                <td data-testid="Users">Users</td>
+                <td data-testid="Answered">Answered</td>
+                <td data-testid="Created">Created</td>
               </tr>
             </thead>
             <tbody>

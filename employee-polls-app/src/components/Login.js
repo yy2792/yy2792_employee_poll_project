@@ -34,7 +34,7 @@ function Login(props) {
       </select>
       {user !== "Select User" && (
         <button
-          id="login-button"
+          data-testid="login-button"
           style={{ marginLeft: "10px" }}
           onClick={handleLogin}
         >

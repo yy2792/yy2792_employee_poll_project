@@ -8,7 +8,10 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 
 const store = createStore(reducer, middleware);
-const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root") || document.createElement("div")
+);
 root.render(
   <Provider store={store}>
     <App />

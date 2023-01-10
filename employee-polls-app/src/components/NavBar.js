@@ -15,13 +15,13 @@ function NavBar({ dispatch, authedUser }) {
     <nav className="navbar">
       <ul className="navItems">
         <Link to="/" className="navItem">
-          <li id="dashboard">Dashboard</li>
+          <li data-testid="dashboard">Dashboard</li>
         </Link>
         <Link to="/leaderboard" className="navItem">
-          <li id="leaderboard">Leaderboard</li>
+          <li data-testid="leaderboard">Leaderboard</li>
         </Link>
         <Link to="/add" className="navItem">
-          <li id="createPoll">New</li>
+          <li data-testid="createPoll">New</li>
         </Link>
       </ul>
       <div className="logout">
