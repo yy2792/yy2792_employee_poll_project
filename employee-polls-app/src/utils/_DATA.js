@@ -152,6 +152,13 @@ function formatQuestion({ optionOneText, optionTwoText, author }) {
 
 export function _saveQuestion(question) {
   return new Promise((res, rej) => {
+    if (
+      !question.optionOneText ||
+      !question.optionTwoText ||
+      !question.author
+    ) {
+      rej("Please provide optionOneText, optionTwoText, and author");
+    }
     const authedUser = question.author;
     const formattedQuestion = formatQuestion(question);
 
@@ -176,6 +183,10 @@ export function _saveQuestion(question) {
 
 export function _saveQuestionAnswer({ authedUser, qid, answer }) {
   return new Promise((res, rej) => {
+    if (!authedUser || !qid || !answer) {
+      rej("Please provide authedUser, qid, and answer");
+    }
+
     setTimeout(() => {
       users = {
         ...users,
@@ -199,7 +210,7 @@ export function _saveQuestionAnswer({ authedUser, qid, answer }) {
         },
       };
 
-      res();
+      res(true);
     }, 500);
   });
 }
