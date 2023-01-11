@@ -6,9 +6,19 @@ import employee_poll_front_page from "../assets/images/employee_poll_front_page.
 
 function Home(props) {
   const { auth, newQuestions, doneQuestions } = props;
+  const [answeredQuestionVisible, setAnsweredQuestionVisible] =
+    useState("newQ");
+
   const navigate = useNavigate();
 
-  const [toggle, settoggle] = useState("NewQuestion");
+  function showUnansweredPolls(e) {
+    setAnsweredQuestionVisible("newQ");
+  }
+
+  function showAnsweredPolls(e) {
+    setAnsweredQuestionVisible("done");
+  }
+
   const questionsSections = [
     {
       key: "newQ",
@@ -32,11 +42,22 @@ function Home(props) {
         <img src={employee_poll_front_page} alt="employee_poll_front_page" />
       </div>
       <div className="home-list">
-        {questionsSections.map((d) => (
-          <div key={d.key}>
-            <QuestionList title={d.title} ids={d.ids} />
-          </div>
-        ))}
+        <div className="togglecontainer">
+          <button className="btnstyle3" onClick={(e) => showUnansweredPolls(e)}>
+            Unanswered Polls
+          </button>
+          <button className="btnstyle3" onClick={(e) => showAnsweredPolls(e)}>
+            Answered Polls
+          </button>
+        </div>
+        {questionsSections.map(
+          (d) =>
+            d.key === answeredQuestionVisible && (
+              <div key={d.key}>
+                <QuestionList title={d.title} ids={d.ids} />
+              </div>
+            )
+        )}
       </div>
     </div>
   );
