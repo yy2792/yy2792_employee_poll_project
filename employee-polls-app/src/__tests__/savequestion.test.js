@@ -14,4 +14,14 @@ describe("Test on _saveQuestion", () => {
     expect(result).toHaveProperty("optionOne");
     expect(result).toHaveProperty("optionTwo");
   });
+
+  it("will return error when incorrect data is passed", async () => {
+    const q = {
+      optionOneText: "opt1",
+      author: "tylermcginnis",
+    };
+    await expect(_saveQuestion(q)).rejects.toEqual(
+      "Please provide optionOneText, optionTwoText, and author"
+    );
+  });
 });

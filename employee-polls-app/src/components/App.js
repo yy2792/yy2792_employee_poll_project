@@ -18,7 +18,7 @@ function App(props) {
 
   return (
     <Router>
-      {auth && <NavBar />}
+      <NavBar />
       <div className="App">
         <Routes>
           <Route exact path="/" element={<Home />} />

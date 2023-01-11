@@ -41,9 +41,20 @@ function NavBar({ dispatch, authedUser }) {
           </>
         )}
         <ul className="nav-logout">
-          <button id="logout" className="logoutBtn" onClick={handleLogout}>
-            Logout
-          </button>
+          {authedUser ? (
+            <button id="logout" className="logoutBtn" onClick={handleLogout}>
+              Logout
+            </button>
+          ) : (
+            <button
+              disabled
+              id="logout"
+              className="logoutBtn"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          )}
         </ul>
       </div>
     </nav>

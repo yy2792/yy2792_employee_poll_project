@@ -1,2 +1,0 @@
-# yy2792_employee_poll_project
-udacity
